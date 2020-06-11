@@ -19,6 +19,21 @@ function getCellElements (currentRowElement) {
     return currentRowElement.querySelectorAll(".cell")
 }
 
+replaceAllButton.addEventListener('click', function () {
+    let oldWord= findInput.value 
+    let newWord = replaceInput.value
+    for (let rowIndex = 0; rowIndex < rowElements.length; rowIndex += 1){
+        let cellArray = getCellElements (rowElements[rowIndex])
+    for (let cellIndex = 0; cellIndex < cellArray.length; cellIndex += 1){
+        if (cellArray[cellIndex].innerText.includes (oldWord)){
+            cellArray[cellIndex].innerHTML =cellArray[cellIndex].innerHTML.replace (oldWord, newWord)
+        }
+    }
+}
+console.log()
+
+})
+
 
 // YOUR CODE GOES HERE
 
